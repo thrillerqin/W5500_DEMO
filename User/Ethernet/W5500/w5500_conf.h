@@ -21,10 +21,10 @@ extern uint8  	use_eeprom;																/*是否使用EEPROM中的IP配置信息*/
 #define W5500_SPI_NAME                      SPI2
 #define W5500_SPI_CLK                       RCC_APB1Periph_SPI2
 
-//W5500模块之NCS,PB12
-#define W5500_NCS_GPIO_PORT                 GPIOB
-#define W5500_NCS_GPIO_CLK                  RCC_APB2Periph_GPIOB
-#define W5500_NCS_GPIO_PIN                  GPIO_Pin_12
+//W5500模块之NCS,PC11
+#define W5500_NCS_GPIO_PORT                 GPIOC
+#define W5500_NCS_GPIO_CLK                  RCC_APB2Periph_GPIOC
+#define W5500_NCS_GPIO_PIN                  GPIO_Pin_11
 
 //W5500模块之SPI_SCLK,PB13
 #define W5500_SPI_SCLK_GPIO_PORT            GPIOB

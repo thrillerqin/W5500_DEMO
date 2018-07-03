@@ -26,7 +26,7 @@
 #include "bsp_usart1.h"
 
 #include "w5500.h"
-#include "W5500_conf.h"
+#include "W5500_conf.h" /* 相关引脚的配置 */
 #include "socket.h"
 #include "utility.h"
 /*app函数头文件*/
@@ -47,7 +47,7 @@ int main(void)
 { 	  
     systick_init(72);				            /*初始化Systick工作时钟*/
     USART2_Config(); 				            /*初始化串口通信:115200@8-n-1*/
-
+ 
     printf(" 野火网络适配版 TCP Server demo V1.0 \r\n");
 
     gpio_for_w5500_config();	         	/*初始化MCU相关引脚*/
@@ -61,16 +61,16 @@ int main(void)
     printf(" W5500监听端口为： %d \r\n",local_port);
     printf(" 连接成功后，TCP Client发送数据给W5500，W5500将返回对应数据 \r\n");
 
-    ntp_client_init();                  /*NTP初始化*/
+//    ntp_client_init();                  /*NTP初始化*/
     while(1)                            /*循环执行的函数*/ 
     {
 //       do_tcp_server();                  /*TCP_Client 数据回环测试程序*/
-//       do_tcp_client();
+       do_tcp_client();
         
 //        do_udp();   //udp测试
 //        do_dhcp();
 //        do_dns();   delay_ms(1000); /*域名解析测试程序*/      
 //        do_https(); if(reboot_flag==1)  reboot();   /*Web server测试程序*/
-        do_ntp_client();    /* NTP测试程序 */
+//        do_ntp_client();    /* NTP测试程序 */
     }
 }
